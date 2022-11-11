@@ -1,0 +1,10 @@
+﻿@model string;
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("User"))
+{
+    <div style="position: absolute; right: 15px; bottom: 17px" class="text-white">
+        <a asp-controller="@Model" asp-action="Create" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Create Location
+        </a>
+    </div>
+}
