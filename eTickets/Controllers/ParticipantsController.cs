@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace eTickets.Controllers
 {
-   // [Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.User + "," + UserRoles.Admin)]
     public class ParticipantsController : Controller
     {
         private readonly IParticipantsService _service;

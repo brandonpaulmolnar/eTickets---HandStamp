@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace eTickets.Controllers
 {
-    //[Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.User + "," + UserRoles.Admin)]
 
     public class EventsController : Controller
     {
@@ -47,7 +47,7 @@ namespace eTickets.Controllers
 
             return View("Index", allEvents);
         }
-
+        //
         //GET: Events/Details/1
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
@@ -57,7 +57,6 @@ namespace eTickets.Controllers
         }
 
         //GET: Events/Create
-        [Authorize(Roles = UserRoles.User)]
         public async Task<IActionResult> Create()
         {
             var EventDropdownsData = await _service.GetNewEventDropdownsValues();
@@ -88,7 +87,6 @@ namespace eTickets.Controllers
         }
 
         //GET: Events/Edit/1
-        [Authorize(Roles = UserRoles.User)]
         public async Task<IActionResult> Edit(int id)
         {
             var EventDetails = await _service.GetEventByIdAsync(id);
@@ -143,7 +141,6 @@ namespace eTickets.Controllers
         }
 
         //Get: Events/Delete/1
-        [Authorize(Roles = UserRoles.User)]
         public async Task<IActionResult> Delete(int id)
         {
             var EventDetails = await _service.GetEventByIdAsync(id);

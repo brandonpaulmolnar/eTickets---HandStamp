@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace eTickets.Controllers
 {
-    //[Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.User + "," + UserRoles.Admin)]
     public class SponsorsController : Controller
     {
         private readonly ISponsorsService _service;

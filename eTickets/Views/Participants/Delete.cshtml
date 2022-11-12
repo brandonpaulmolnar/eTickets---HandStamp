@@ -7,8 +7,11 @@
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1>Delete confirmation for @Model.FullName</h1>
+            <h1>Delete Participant</h1>
+            <h4>Would you like to delete "@Model.FullName"? This action cannot be undone.</h4>
+            <hr />
         </p>
+        <br>
         <div class="row">
             <div class="col-md-8 offset-2">
                     <div class="form-group text-center">
@@ -35,7 +38,7 @@
                             <input type="hidden" asp-for="Id" />
                             <input type="submit" value="Confirm" class="btn btn-danger float-right" />
                         </form>
-                        <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                        <a class="btn btn-outline-secondary" asp-action="Index">Cancel</a>
                     </div>
             </div>
         </div>

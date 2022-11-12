@@ -1,10 +1,10 @@
 ﻿@model string;
 
-@if (User.Identity.IsAuthenticated && User.IsInRole("User"))
+@if (User.Identity.IsAuthenticated && (User.IsInRole("User") || User.IsInRole("Admin")))
 {
     <div style="position: absolute; right: 15px; bottom: 17px" class="text-white">
         <a asp-controller="@Model" asp-action="Create" class="btn btn-success">
-            <i class="bi bi-plus-circle"></i> Create Sponsor 
+            <i class="bi bi-plus-circle"></i> Create
         </a>
     </div>
 }
