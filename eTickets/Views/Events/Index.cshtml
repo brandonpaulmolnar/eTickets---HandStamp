@@ -41,9 +41,6 @@
                     <div class="card-body">
                         <p class="card-text">@item.Description</p>
                         <p class="card-text"><b>Location: </b>@item.Location.Name</p>
-                        <p class="card-text"><b>Category: </b>@item.EventCategory</p>
-                        <p class="card-text"><b>Start Date: </b>@item.StartDate.ToString("dd MMM yy")</p>
-                        <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yy")</p>
                         <p class="card-text">
                             <b>Status: </b>
                             @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
