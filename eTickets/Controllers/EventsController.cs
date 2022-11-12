@@ -139,7 +139,7 @@ namespace eTickets.Controllers
             await _service.UpdateEventAsync(Event);
             return RedirectToAction(nameof(Index));
         }
-
+        
         //Get: Events/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
